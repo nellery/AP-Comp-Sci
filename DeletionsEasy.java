@@ -58,7 +58,6 @@ public class DeletionsEasy {
                 max=str.charAt(i);
             }
         }
-        //return mostFrequent;
         return max;
     }
 }
