@@ -11,9 +11,14 @@ public class DeletionsHard {
         System.out.println("Please enter the string of numbers to play with.");
         String str = scan.nextLine();
         str=str.replace(", ","");
-        while (!str.equals("0")) {
-            str=removeZeros(str);
-            moves++;
+        while (!str.equals("")) {
+            if (str.contains("0")) {
+                str=removeZeros(str);
+                moves++;
+            }
+            if (str.equals("")) {
+                break;
+            }
             mostFreq=findMostFreq(str);
             int location = str.lastIndexOf(Character.toString(mostFreq));
             if (mostFreq % 2==0) {
@@ -27,7 +32,7 @@ public class DeletionsHard {
             str=newStr;
             moves++;
         }
-        
+
         System.out.println("It took " + moves + " moves to delete all the digits.");
     }
 
